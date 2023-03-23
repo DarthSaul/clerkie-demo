@@ -1,2 +1,14 @@
-.active-link {
+.open {
+	display: none;
+}
+
+@media (max-width: 875px) {
+	.drawer {
+		display: none;
+	}
+
+	.open {
+		display: unset;
+		cursor: pointer;
+	}
 }

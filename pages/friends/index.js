@@ -30,7 +30,7 @@ export default function Friends() {
 
 	const handleOnDocumentBottom = useCallback(() => {
 		async function fetchMoreData() {
-			if (!pageinateLoading) {
+			if (!pageinateLoading && data.length) {
 				setPageLoading(true);
 				const response = await getData();
 				setData(data.concat(response.results));
@@ -274,7 +274,11 @@ export default function Friends() {
 				))
 			) : (
 				<>
-					<FriendsList friends={filteredData()} />
+					<div className="pb-10">
+						<FriendsList
+							friends={filteredData()}
+						/>
+					</div>
 
 					{pageinateLoading && (
 						<div className="w-full text-center">
