@@ -5,7 +5,7 @@ export default function FriendsList({ friends }) {
 		<div>
 			{friends.map((el, ind) => (
 				<div
-					key={el.id}
+					key={ind}
 					className="border-slate-200 w-full border rounded-md p-6 mb-4"
 				>
 					<div className="flex flex-row items-center gap-2 mb-2">

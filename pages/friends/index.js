@@ -1,6 +1,6 @@
 import FriendsList from '@/components/FriendsList';
 import FriendsSkeleton from '@/components/FriendsSkeleton';
-import { useEffect, useState, useRef } from 'react';
+import { useEffect, useState, useRef, useCallback } from 'react';
 import getData from '@/lib/getData.js';
 import { MdTune } from 'react-icons/md';
 import styles from '@/styles/Friends.module.css';
@@ -13,17 +13,34 @@ import {
 	Portal,
 	Box,
 	Button,
+	Spinner,
 } from '@chakra-ui/react';
 import { SmallCloseIcon } from '@chakra-ui/icons';
+import { useBottomScrollListener } from 'react-bottom-scroll-listener';
 
 export default function Friends() {
 	const [data, setData] = useState([]);
 	const [loading, setLoading] = useState(false);
+	const [pageinateLoading, setPageLoading] = useState(false);
 	const [filters, setFilters] = useState({ close: false, super: false });
 	const [selections, setSelections] = useState({
 		close: false,
 		super: false,
 	});
+
+	const handleOnDocumentBottom = useCallback(() => {
+		async function fetchMoreData() {
+			if (!pageinateLoading) {
+				setPageLoading(true);
+				const response = await getData();
+				setData(data.concat(response.results));
+				setPageLoading(false);
+			}
+		}
+		fetchMoreData();
+	}, [data, pageinateLoading]);
+
+	useBottomScrollListener(handleOnDocumentBottom);
 
 	useEffect(() => {
 		async function fetchData() {
@@ -35,7 +52,11 @@ export default function Friends() {
 		if (data.length === 0) {
 			fetchData();
 		}
-	}, [data.length]);
+	});
+
+	const scrollRef = useBottomScrollListener(() =>
+		console.log('at bottom!')
+	);
 
 	const handleChange = (event) => {
 		const { name, checked } = event.target;
@@ -88,11 +109,12 @@ export default function Friends() {
 
 	return (
 		<>
-			<div className="flex items-center mb-4">
+			<div className="flex items-center mb-4" ref={scrollRef}>
 				<div
 					className={
-						filterQty() > 0 &&
-						'border-r pr-2'
+						filterQty() > 0
+							? 'border-r pr-2'
+							: ''
 					}
 				>
 					<Popover
@@ -245,12 +267,21 @@ export default function Friends() {
 					</div>
 				)}
 			</div>
+
 			{loading ? (
 				[...Array(5)].map((e, i) => (
 					<FriendsSkeleton key={i} />
 				))
 			) : (
-				<FriendsList friends={filteredData()} />
+				<>
+					<FriendsList friends={filteredData()} />
+
+					{pageinateLoading && (
+						<div className="w-full text-center">
+							<Spinner size="xl" />
+						</div>
+					)}
+				</>
 			)}
 		</>
 	);

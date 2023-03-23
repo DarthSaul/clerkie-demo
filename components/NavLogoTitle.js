@@ -9,7 +9,6 @@ const NavLogoTitle = () => {
 					alt="clerkie logo"
 					width={22}
 					height={22}
-					priority
 				/>
 			</div>
 
