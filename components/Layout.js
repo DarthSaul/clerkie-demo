@@ -3,14 +3,17 @@ import Header from './Header';
 
 export default function Layout({ children }) {
 	return (
-		<div className="grid grid-cols-5 h-screen">
-			<div className="col-span-1">
+		<div class="flex">
+			<aside class="h-screen sticky top-0 w-80">
 				<NavDrawer />
-			</div>
-			<div className="col-span-4">
-				<Header />
+			</aside>
+
+			<main className="w-full">
+				<div className="sticky top-0 bg-white">
+					<Header />
+				</div>
 				<div className="p-10">{children}</div>
-			</div>
+			</main>
 		</div>
 	);
 }
