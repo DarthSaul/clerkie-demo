@@ -4,9 +4,8 @@ import { useRouter } from 'next/router';
 import { MdOutlineSpaceDashboard } from 'react-icons/md';
 import { FaUserFriends } from 'react-icons/fa';
 
-const NavDrawer = () => {
+const NavDrawer = ({ close }) => {
 	const router = useRouter();
-	console.log(router);
 	return (
 		<div className="flex flex-col bg-dark-blue text-white h-full p-5">
 			<div className="mb-5 p-1">
@@ -20,7 +19,14 @@ const NavDrawer = () => {
 						: ''
 				}`}
 			>
-				<Link href="/">
+				<Link
+					href="/"
+					onClick={
+						close
+							? (e) => close()
+							: undefined
+					}
+				>
 					<div className="flex items-center">
 						<div className="mr-2">
 							<MdOutlineSpaceDashboard />
@@ -38,7 +44,14 @@ const NavDrawer = () => {
 						: ''
 				}`}
 			>
-				<Link href="/friends">
+				<Link
+					href="/friends"
+					onClick={
+						close
+							? (e) => close()
+							: undefined
+					}
+				>
 					<div className="flex items-center">
 						<div className="mr-2">
 							<FaUserFriends />

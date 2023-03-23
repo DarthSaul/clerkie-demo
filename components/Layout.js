@@ -23,7 +23,7 @@ export default function Layout({ children }) {
 			>
 				<DrawerOverlay />
 				<DrawerContent>
-					<NavDrawer />
+					<NavDrawer close={onClose} />
 				</DrawerContent>
 			</Drawer>
 

@@ -1,12 +1,8 @@
-import { useRouter } from 'next/router';
 import Image from 'next/image';
 import styles from '@/styles/FriendProfile.module.css';
 import { Tabs, TabList, TabPanels, Tab, TabPanel } from '@chakra-ui/react';
 
 const Friend = () => {
-	const router = useRouter();
-	const { friend } = router.query;
-
 	return (
 		<div className="grid grid-cols-12 gap-4 my-8">
 			<div className="col-span-12 bg-light-blue h-40 rounded-t-xl">
@@ -17,6 +13,7 @@ const Friend = () => {
 							width={425}
 							height={100}
 							alt="profile header"
+							priority
 							className={
 								styles.headerImage
 							}
@@ -65,7 +62,7 @@ const Friend = () => {
 							style={{ padding: 0 }}
 						>
 							<div className="grid grid-cols-12 gap-8">
-								<div className="col-span-8">
+								<div className="col-span-12  md:col-span-6 lg:col-span-8">
 									<div className="h-80 rounded-xl bg-orange-100 p-8 flex flex-col justify-between">
 										<div className="text-2xl font-bold">
 											Portfolio
@@ -86,7 +83,7 @@ const Friend = () => {
 										</div>
 									</div>
 								</div>
-								<div className="col-span-4">
+								<div className="col-span-12  md:col-span-6 lg:col-span-4">
 									<div className="h-80 rounded-xl bg-cyan-100 p-8 justify-between">
 										<div className="text-2xl font-bold mb-5">
 											Recent
@@ -95,7 +92,7 @@ const Friend = () => {
 										<div className="mb-3">
 											<div className="flex items-center">
 												<div className="mr-3">
-													<div class="rounded-full bg-amber-400 h-2 w-2"></div>
+													<div className="rounded-full bg-amber-400 h-2 w-2"></div>
 												</div>
 												<div className="text-lg">
 													Recent
@@ -107,7 +104,7 @@ const Friend = () => {
 										<div className="mb-3">
 											<div className="flex items-center">
 												<div className="mr-3">
-													<div class="rounded-full bg-red-300 h-2 w-2"></div>
+													<div className="rounded-full bg-red-300 h-2 w-2"></div>
 												</div>
 												<div className="text-lg">
 													Recent
@@ -119,7 +116,7 @@ const Friend = () => {
 										<div className="mb-3">
 											<div className="flex items-center">
 												<div className="mr-3">
-													<div class="rounded-full bg-green-500 h-2 w-2"></div>
+													<div className="rounded-full bg-green-500 h-2 w-2"></div>
 												</div>
 												<div className="text-lg">
 													Recent

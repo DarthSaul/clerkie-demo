@@ -1,5 +1,3 @@
-import NavDrawer from '@/components/NavDrawer';
-
 export default function Home() {
 	return (
 		<>

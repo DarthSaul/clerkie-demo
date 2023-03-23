@@ -10,3 +10,22 @@
 	left: 70px;
 	top: 90px;
 }
+
+@media (max-width: 1100px) {
+	.headerImage {
+		width: 300px;
+		left: 40px;
+		top: 80px;
+	}
+}
+@media (max-width: 900px) {
+	.headerImage {
+		width: 250px;
+		top: 60px;
+	}
+}
+@media (max-width: 700px) {
+	.headerImage {
+		display: none;
+	}
+}
