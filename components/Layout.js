@@ -3,8 +3,8 @@ import Header from './Header';
 
 export default function Layout({ children }) {
 	return (
-		<div class="flex">
-			<aside class="h-screen sticky top-0 w-80">
+		<div className="flex">
+			<aside className="h-screen sticky top-0 w-80">
 				<NavDrawer />
 			</aside>
 
