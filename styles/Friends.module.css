@@ -1,4 +1,14 @@
 .filter {
-	height: 30px;
-	width: 30px;
+	height: 25px;
+	width: 25px;
+}
+.filter:hover {
+	cursor: pointer;
+}
+.clear {
+	cursor: pointer;
+}
+.close {
+	cursor: pointer;
+	margin-bottom: 3px;
 }
