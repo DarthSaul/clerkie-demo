@@ -6,6 +6,7 @@ import { FaUserFriends } from 'react-icons/fa';
 
 const NavDrawer = () => {
 	const router = useRouter();
+	console.log(router);
 	return (
 		<div className="flex flex-col bg-dark-blue text-white h-full p-5">
 			<div className="mb-5 p-1">
@@ -31,7 +32,8 @@ const NavDrawer = () => {
 
 			<div
 				className={`mb-4 p-2 rounded-md ${
-					router.pathname == '/friends'
+					router.pathname == '/friends' ||
+					router.pathname == '/friends/[friend]'
 						? 'bg-neutral-700/50'
 						: ''
 				}`}

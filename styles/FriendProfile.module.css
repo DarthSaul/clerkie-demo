@@ -1,0 +1,12 @@
+.profileImage {
+	position: relative;
+	left: 20px;
+	bottom: 85px;
+	border-radius: 50%;
+	border: 6px solid white;
+}
+.headerImage {
+	position: relative;
+	left: 70px;
+	top: 90px;
+}
