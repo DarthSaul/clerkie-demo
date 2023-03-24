@@ -18,7 +18,7 @@ function Pokemon() {
 			<div className="mb-5">
 				<DashboardRow
 					name="charizard"
-					color="blue-300"
+					color="cyan-200"
 				/>
 			</div>
 		</div>
