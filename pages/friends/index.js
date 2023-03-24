@@ -60,10 +60,6 @@ export default function Friends() {
 
 	useBottomScrollListener(handleOnDocumentBottom);
 
-	const scrollRef = useBottomScrollListener(() =>
-		console.log('at bottom!')
-	);
-
 	const handleChange = (event) => {
 		const { name, checked } = event.target;
 		setSelections((state) => ({
@@ -74,6 +70,7 @@ export default function Friends() {
 
 	const initRef = useRef();
 
+	// Would need to be improved for scalability
 	function filteredData() {
 		let filteredData = [...data];
 
@@ -123,7 +120,7 @@ export default function Friends() {
 
 	return (
 		<>
-			<div className="flex items-center mb-4" ref={scrollRef}>
+			<div className="flex items-center mb-4">
 				<div
 					className={
 						filterQty() > 0
