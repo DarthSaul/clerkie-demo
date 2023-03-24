@@ -1,7 +1,7 @@
 import NavLogoTitle from './NavLogoTitle';
 import Link from 'next/link';
 import { useRouter } from 'next/router';
-import { MdOutlineSpaceDashboard } from 'react-icons/md';
+import { MdOutlineSpaceDashboard, MdCatchingPokemon } from 'react-icons/md';
 import { FaUserFriends } from 'react-icons/fa';
 
 const NavDrawer = ({ close }) => {
@@ -57,6 +57,30 @@ const NavDrawer = ({ close }) => {
 							<FaUserFriends />
 						</div>
 						<div>Friends</div>
+					</div>
+				</Link>
+			</div>
+
+			<div
+				className={`mb-4 p-2 rounded-md ${
+					router.pathname == '/pokemon'
+						? 'bg-neutral-700/50'
+						: ''
+				}`}
+			>
+				<Link
+					href="/pokemon"
+					onClick={
+						close
+							? (e) => close()
+							: undefined
+					}
+				>
+					<div className="flex items-center">
+						<div className="mr-2">
+							<MdCatchingPokemon />
+						</div>
+						<div>Pokemon</div>
 					</div>
 				</Link>
 			</div>

@@ -28,6 +28,18 @@ export default function Friends() {
 		super: false,
 	});
 
+	useEffect(() => {
+		async function fetchData() {
+			setLoading(true);
+			const response = await getData();
+			setData(response.results);
+			setLoading(false);
+		}
+		if (data.length === 0) {
+			fetchData();
+		}
+	});
+
 	const handleOnDocumentBottom = useCallback(() => {
 		async function fetchMoreData() {
 			if (!pageinateLoading && data.length) {
@@ -41,18 +53,6 @@ export default function Friends() {
 	}, [data, pageinateLoading]);
 
 	useBottomScrollListener(handleOnDocumentBottom);
-
-	useEffect(() => {
-		async function fetchData() {
-			setLoading(true);
-			const response = await getData();
-			setData(response.results);
-			setLoading(false);
-		}
-		if (data.length === 0) {
-			fetchData();
-		}
-	});
 
 	const scrollRef = useBottomScrollListener(() =>
 		console.log('at bottom!')

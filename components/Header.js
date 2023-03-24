@@ -5,7 +5,12 @@ import Link from 'next/link';
 
 export default function Header({ open }) {
 	const router = useRouter();
-	const title = router.pathname === '/' ? 'Home' : 'Friends';
+	const title =
+		router.pathname === '/'
+			? 'Home'
+			: router.pathname === '/pokemon'
+			? 'Pokemon'
+			: 'Friends';
 	const { friend } = router.query;
 	return (
 		<div className="w-full p-4 shadow">
