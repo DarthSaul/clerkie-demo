@@ -1,5 +1,7 @@
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
+Production version hosted at https://clerkie-demo.vercel.app/.
+
 ## Getting Started
 
 First, run the development server:
@@ -34,4 +36,8 @@ Navigate to **Friends**. Loading skeletons are displayed during initial fetch. O
 
 To view sample friend info view, click one of the friend items. All content is static, except "Friend ID" in header breadcrumbs. Value corresponds to index of item in data array.
 
+Web app is responsive - component sizes adjust for smaller screen sizes and navigation drawer switches to overlay mode.
+
 ### What the heck is Pokemon?
+
+The `/pages/pokemon` directory exists simply to demonstrate a better method of fetching data from an external API. The React component hosted at `/friends` does not cache any data and re-fetches data from a simple Promise written directly in the code. The component at `/pokemon`, on the other hand, utilizes a custom hook that wraps around `useSWR`. If this project were using a real API, my preferred approach would be to utilize a HTTP caching method.
