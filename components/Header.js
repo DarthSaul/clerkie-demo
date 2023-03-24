@@ -5,13 +5,17 @@ import Link from 'next/link';
 
 export default function Header({ open }) {
 	const router = useRouter();
+
+	// Would need to be improved for scalability
 	const title =
 		router.pathname === '/'
 			? 'Home'
 			: router.pathname === '/pokemon'
 			? 'Pokemon'
 			: 'Friends';
+
 	const { friend } = router.query;
+
 	return (
 		<div className="w-full p-4 shadow">
 			<div className="flex items-center">

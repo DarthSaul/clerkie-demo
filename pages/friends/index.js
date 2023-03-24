@@ -128,6 +128,7 @@ export default function Friends() {
 							: ''
 					}
 				>
+					{/* Popover could be moved to its own component */}
 					<Popover
 						closeOnBlur={false}
 						placement="bottom-start"

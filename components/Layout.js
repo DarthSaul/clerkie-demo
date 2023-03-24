@@ -5,7 +5,6 @@ import { Drawer, DrawerOverlay, DrawerContent, Button } from '@chakra-ui/react';
 import { useDisclosure } from '@chakra-ui/react';
 
 export default function Layout({ children }) {
-	// const [navState, setNav] = useState(true);
 	const { isOpen, onOpen, onClose } = useDisclosure();
 
 	return (
