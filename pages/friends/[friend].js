@@ -3,6 +3,9 @@ import styles from '@/styles/FriendProfile.module.css';
 import { Tabs, TabList, TabPanels, Tab, TabPanel } from '@chakra-ui/react';
 
 const Friend = () => {
+	// Fetch data using ID in router params
+	// i.e. fetch(/api/profile/${id})
+
 	return (
 		<div className="grid grid-cols-12 gap-4 my-8">
 			<div className="col-span-12 bg-light-blue h-40 rounded-t-xl">

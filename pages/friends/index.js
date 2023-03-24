@@ -21,6 +21,8 @@ import { useBottomScrollListener } from 'react-bottom-scroll-listener';
 export default function Friends() {
 	const [data, setData] = useState([]);
 	const [loading, setLoading] = useState(false);
+	const [errorMsg, setError] = useState(false);
+
 	const [pageinateLoading, setPageLoading] = useState(false);
 	const [filters, setFilters] = useState({ close: false, super: false });
 	const [selections, setSelections] = useState({
@@ -31,8 +33,12 @@ export default function Friends() {
 	useEffect(() => {
 		async function fetchData() {
 			setLoading(true);
-			const response = await getData();
-			setData(response.results);
+			const { results, error } = await getData();
+			if (error) {
+				setError(error);
+			} else {
+				setData(results);
+			}
 			setLoading(false);
 		}
 		if (data.length === 0) {
@@ -106,6 +112,14 @@ export default function Friends() {
 		);
 		return filtered.length;
 	}
+
+	if (errorMsg)
+		return (
+			<div>
+				Whoops, something went wrong. Please try again
+				or contact support.
+			</div>
+		);
 
 	return (
 		<>
