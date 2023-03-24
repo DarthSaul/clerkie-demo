@@ -17,8 +17,13 @@ Open [http://localhost:3000](http://localhost:3000) with your browser to see the
 ## Resources and Libraries
 
 [Tailwind CSS](https://tailwindcss.com/)
+
 [Chakra UI](https://chakra-ui.com/)
+
 [React Icons](https://react-icons.github.io/react-icons)
+
 [PokeApi](https://pokeapi.co/)
+
 [SWR](https://swr.vercel.app/)
+
 [react-bottom-scroll-listener](https://github.com/karl-run/react-bottom-scroll-listener#readme)
