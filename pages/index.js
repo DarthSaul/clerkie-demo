@@ -12,7 +12,7 @@ function Home() {
 				</Link>
 
 				<Link
-					href="/friends"
+					href="/pokemon"
 					className="col-span-12 md:col-span-6 bg-amber-300 rounded-xl flex items-center justify-center text-6xl"
 				>
 					Pokemon
