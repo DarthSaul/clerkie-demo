@@ -34,4 +34,4 @@ Navigate to **Friends**. Loading skeletons are displayed during initial fetch. O
 
 To view sample friend info view, click one of the friend items. All content is static, except "Friend ID" in header breadcrumbs. Value corresponds to index of item in data array.
 
-**What the heck is Pokemon?**
+### What the heck is Pokemon?
