@@ -1,6 +1,7 @@
 import { useRouter } from 'next/router';
 import styles from '@/styles/Nav.module.css';
 import { MdMenu, MdOutlineArrowForwardIos } from 'react-icons/md';
+import Link from 'next/link';
 
 export default function Header({ open }) {
 	const router = useRouter();
@@ -15,7 +16,17 @@ export default function Header({ open }) {
 				>
 					<MdMenu />
 				</div>
-				<div className="mr-2">{title}</div>
+				<div className="mr-2">
+					<Link
+						href={`/${
+							title === 'Home'
+								? ''
+								: 'friends'
+						}`}
+					>
+						{title}
+					</Link>
+				</div>
 				{friend && (
 					<>
 						<div className="mr-2 text-slate-400 text-sm">
