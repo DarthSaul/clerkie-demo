@@ -232,21 +232,17 @@ export default function Friends() {
 													applyFilters
 												}
 											>
-												<Button
-													mt={
-														4
-													}
-													colorScheme="facebook"
+												<button
 													onClick={
 														onClose
 													}
 													ref={
 														initRef
 													}
-													className="w-full"
+													className="w-full mt-4 rounded-md bg-gray-600 text-white py-2"
 												>
 													Apply
-												</Button>
+												</button>
 											</div>
 										</PopoverBody>
 									</PopoverContent>
