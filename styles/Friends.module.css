@@ -25,10 +25,11 @@
 	font-size: 14px;
 	font-weight: 600;
 }
-.clear-active:hover {
+.clear-active {
+	color: #3399ff;
 	cursor: pointer;
-	color: blue;
 }
+
 .close {
 	cursor: pointer;
 	margin-bottom: 3px;
@@ -55,4 +56,14 @@
 	font-weight: 600;
 	font-size: 12px;
 	line-height: 15px;
+}
+.loading-item {
+	height: 114px;
+}
+.loading-bar {
+	background: linear-gradient(
+		90deg,
+		#eaeaea 26.47%,
+		rgba(234, 234, 234, 0.25) 100%
+	);
 }

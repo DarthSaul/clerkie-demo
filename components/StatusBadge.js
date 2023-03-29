@@ -9,9 +9,5 @@ export default function StatusBadge({ type }) {
 		close: 'Close Friends',
 		super: 'Super Close Friends',
 	};
-	return (
-		<div className={`rounded-full px-2 ${badgeStyles[type]}`}>
-			{text[type]}
-		</div>
-	);
+	return <div className={`${badgeStyles[type]}`}>{text[type]}</div>;
 }
