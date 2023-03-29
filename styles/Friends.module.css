@@ -1,4 +1,7 @@
-.filter {
+.filter-btn {
+	min-width: 44px;
+}
+.filter-icon {
 	height: 20px;
 	width: 20px;
 }
