@@ -1,14 +1,15 @@
 import Image from 'next/image';
+import styles from '@/styles/Nav.module.css';
 
 const NavLogoTitle = () => {
 	return (
-		<div className="flex items-center">
-			<div className="mr-3">
+		<div className={`flex items-center ${styles['logo-wrapper']}`}>
+			<div className={styles['logo']}>
 				<Image
 					src="/clerkie-logo-blue.png"
 					alt="clerkie logo"
-					width={22}
-					height={22}
+					width={20}
+					height={20}
 				/>
 			</div>
 

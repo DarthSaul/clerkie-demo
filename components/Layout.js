@@ -10,7 +10,7 @@ export default function Layout({ children }) {
 	return (
 		<div className="flex">
 			<aside
-				className={`h-screen sticky top-0 w-80 ${styles.drawer}`}
+				className={`h-screen sticky top-0 ${styles.drawer}`}
 			>
 				<NavDrawer />
 			</aside>
@@ -31,7 +31,7 @@ export default function Layout({ children }) {
 					<Header open={onOpen} />
 				</div>
 				<div></div>
-				<div className="p-10">{children}</div>
+				<div className="page-container">{children}</div>
 			</main>
 		</div>
 	);

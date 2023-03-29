@@ -17,7 +17,9 @@ export default function Header({ open }) {
 	const { friend } = router.query;
 
 	return (
-		<div className="w-full p-4 shadow">
+		<div
+			className={`w-full shadow grid content-center ${styles.header}`}
+		>
 			<div className="flex items-center">
 				<div
 					className={`mr-3 ${styles.open}`}
@@ -25,7 +27,7 @@ export default function Header({ open }) {
 				>
 					<MdMenu />
 				</div>
-				<div className="mr-2">
+				<div className="mr-2 font-bold text-lg">
 					<Link
 						href={`/${
 							title === 'Home'

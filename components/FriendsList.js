@@ -6,7 +6,7 @@ export default function FriendsList({ friends }) {
 		<div>
 			{friends.map((el, ind) => (
 				<Link href={`/friends/${ind}`} key={ind}>
-					<div className="border-slate-200 w-full border rounded-md p-6 mb-4">
+					<div className="border-gray_400 w-full border rounded-md p-6 mb-4">
 						<div className="flex flex-row items-center gap-2 mb-2">
 							<div className="text-xl font-bold">
 								{el.name}

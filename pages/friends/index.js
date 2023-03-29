@@ -120,7 +120,7 @@ export default function Friends() {
 
 	return (
 		<>
-			<div className="flex items-center mb-4">
+			<div className="flex items-center mb-6">
 				<div
 					className={
 						filterQty() > 0
