@@ -1,14 +1,16 @@
+import styles from '@/styles/Friends.module.css';
+
 export default function StatusBadge({ type }) {
-	const styles = {
-		close: 'bg-green-100 text-green-600',
-		super: 'bg-blue-100 text-blue-600',
+	const badgeStyles = {
+		close: styles['badge-blue'],
+		super: styles['badge-green'],
 	};
 	const text = {
 		close: 'Close Friends',
 		super: 'Super Close Friends',
 	};
 	return (
-		<div className={`rounded-full px-2 ${styles[type]}`}>
+		<div className={`rounded-full px-2 ${badgeStyles[type]}`}>
 			{text[type]}
 		</div>
 	);

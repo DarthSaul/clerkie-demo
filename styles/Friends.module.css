@@ -1,20 +1,58 @@
 .filter-btn {
-	min-width: 44px;
+	min-width: 52px;
+	height: 34px;
+	position: relative;
+}
+.filter-btn:before {
+	position: absolute;
+	content: '';
+	background-color: #d7d7d7;
+	width: 1px;
+	right: -15px;
+	bottom: 2px;
+	height: 28px;
+	border-radius: 18px;
 }
 .filter-icon {
-	height: 20px;
-	width: 20px;
+	height: 26px;
+	width: 26px;
 }
 .cursor:hover {
 	cursor: pointer;
 }
 .clear {
-	cursor: pointer;
+	color: #d7d7d7;
+	font-size: 14px;
+	font-weight: 600;
 }
-.clear:hover {
+.clear-active:hover {
+	cursor: pointer;
 	color: blue;
 }
 .close {
 	cursor: pointer;
 	margin-bottom: 3px;
+}
+.friend-item {
+	height: 114px;
+}
+.badge-green {
+	height: 21px;
+	padding: 3px 7px 3px 7px;
+	border-radius: 21px;
+	background: #dcffe6;
+	color: #19b444;
+	font-weight: 600;
+	font-size: 12px;
+	line-height: 15px;
+}
+.badge-blue {
+	height: 21px;
+	padding: 3px 7px 3px 7px;
+	border-radius: 21px;
+	background: #dfefff;
+	color: #3399ff;
+	font-weight: 600;
+	font-size: 12px;
+	line-height: 15px;
 }

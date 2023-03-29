@@ -17,9 +17,7 @@ export default function Header({ open }) {
 	const { friend } = router.query;
 
 	return (
-		<div
-			className={`w-full shadow grid content-center ${styles.header}`}
-		>
+		<div className={`w-full grid content-center ${styles.header}`}>
 			<div className="flex items-center">
 				<div
 					className={`mr-3 ${styles.open}`}

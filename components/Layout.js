@@ -31,7 +31,11 @@ export default function Layout({ children }) {
 					<Header open={onOpen} />
 				</div>
 				<div></div>
-				<div className="page-container">{children}</div>
+				<div className="px-8">
+					<div className="page-container">
+						{children}
+					</div>
+				</div>
 			</main>
 		</div>
 	);

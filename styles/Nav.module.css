@@ -30,6 +30,7 @@
 	height: 80px;
 	padding-left: 40px;
 	margin-bottom: 46px;
+	box-shadow: 0px 4px 4px rgba(162, 162, 162, 0.1);
 }
 
 @media (max-width: 875px) {

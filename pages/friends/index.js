@@ -121,7 +121,7 @@ export default function Friends() {
 	return (
 		<>
 			<div className="flex items-center mb-6">
-				<div className="border-r pr-2">
+				<div className="pr-2">
 					{/* Popover could be moved to its own component */}
 					<Popover
 						closeOnBlur={false}
@@ -132,7 +132,7 @@ export default function Friends() {
 							<>
 								<PopoverTrigger>
 									<div
-										className={`rounded-full border border-gray_600 px-2 ${
+										className={`rounded-full border border-gray_600 px-2 flex align-center justify-center ${
 											styles[
 												'filter-btn'
 											]
@@ -145,7 +145,7 @@ export default function Friends() {
 										}`}
 									>
 										<div
-											className={`flex items-center justify-center py-1 ${styles.cursor}`}
+											className={`flex items-center justify-center ${styles.cursor}`}
 										>
 											<div>
 												<MdTune
@@ -264,17 +264,25 @@ export default function Friends() {
 						)}
 					</Popover>
 				</div>
-				{filterQty() > 0 && (
-					<div className="pl-2">
-						{' '}
-						<span
-							className={styles.clear}
-							onClick={clearFilters}
-						>
-							Clear All
-						</span>
-					</div>
-				)}
+
+				<div className="pl-4">
+					<span
+						className={`${styles.clear} ${
+							filterQty() > 0
+								? styles[
+										'clear-active'
+								  ]
+								: ''
+						}`}
+						onClick={
+							filterQty() > 0
+								? clearFilters
+								: undefined
+						}
+					>
+						Clear All
+					</span>
+				</div>
 			</div>
 
 			{loading ? (

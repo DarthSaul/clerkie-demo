@@ -1,14 +1,17 @@
 import StatusBadge from './StatusBadge';
 import Link from 'next/link';
+import styles from '@/styles/Friends.module.css';
 
 export default function FriendsList({ friends }) {
 	return (
-		<div>
+		<>
 			{friends.map((el, ind) => (
 				<Link href={`/friends/${ind}`} key={ind}>
-					<div className="border-gray_400 w-full border rounded-md p-6 mb-4">
-						<div className="flex flex-row items-center gap-2 mb-2">
-							<div className="text-xl font-bold">
+					<div
+						className={`border-gray_400 w-full border rounded-md p-6 mb-4 grid content-center ${styles['friend-item']}`}
+					>
+						<div className="flex flex-row items-center gap-2 mb-3">
+							<div className="text-base font-bold">
 								{el.name}
 							</div>
 							<div>
@@ -19,7 +22,7 @@ export default function FriendsList({ friends }) {
 								/>
 							</div>
 						</div>
-						<div className="flex flex-row items-center gap-1 text-slate-400">
+						<div className="flex flex-row items-center gap-1 text-gray_600 font-medium">
 							<div>{el.email}</div>
 							<div>•</div>
 							<div>
@@ -31,6 +34,6 @@ export default function FriendsList({ friends }) {
 					</div>
 				</Link>
 			))}
-		</div>
+		</>
 	);
 }
