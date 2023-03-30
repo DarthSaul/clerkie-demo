@@ -62,6 +62,9 @@ export default function PopupMenu({
 							onChange={(e) =>
 								handleChange(e)
 							}
+							className={
+								styles.checkbox
+							}
 						/>
 					</div>
 					<div className="flex justify-between items-center text-base font-semibold text-gray_1000">
@@ -73,6 +76,9 @@ export default function PopupMenu({
 								selections.super
 							}
 							onChange={handleChange}
+							className={
+								styles.checkbox
+							}
 						/>
 					</div>
 				</div>

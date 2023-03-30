@@ -24,3 +24,10 @@
 	color: #3399ff;
 	cursor: pointer;
 }
+.checkbox {
+	box-sizing: border-box;
+	width: 19px;
+	height: 19px;
+	border: 1.5px solid #ababab;
+	border-radius: 1px;
+}

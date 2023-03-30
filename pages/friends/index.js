@@ -1,54 +1,38 @@
 import FriendsList from '@/components/FriendsList';
 import FriendsSkeleton from '@/components/FriendsSkeleton';
-import { useEffect, useState, useCallback } from 'react';
-import getData from '@/lib/getData.js';
+import { useEffect, useState, useCallback, useContext } from 'react';
+import { FriendsContext } from '@/contexts/FriendsContext';
 import { MdTune } from 'react-icons/md';
 import styles from '@/styles/Friends.module.css';
-import { Spinner } from '@chakra-ui/react';
 import { useBottomScrollListener } from 'react-bottom-scroll-listener';
 import PopupMenu from '@/components/PopupMenu';
 import OutsideClickHandler from '@/components/OutsideClickHandler';
 
 export default function Friends() {
-	const [data, setData] = useState([]);
-	const [loading, setLoading] = useState(false);
-	const [errorMsg, setError] = useState(false);
 	const [popupMenu, setPopup] = useState(false);
-
-	const [pageinateLoading, setPageLoading] = useState(false);
 	const [filters, setFilters] = useState({ close: false, super: false });
 	const [selections, setSelections] = useState({
 		close: false,
 		super: false,
 	});
 
+	const {
+		friendsState: { friends, loading, paginateLoading, error },
+		initData,
+		fetchMoreData,
+	} = useContext(FriendsContext);
+
 	useEffect(() => {
-		async function fetchData() {
-			setLoading(true);
-			const { results, error } = await getData();
-			if (error) {
-				setError(error);
-			} else {
-				setData(results);
-			}
-			setLoading(false);
+		if (friends.length === 0) {
+			initData();
 		}
-		if (data.length === 0) {
-			fetchData();
-		}
-	});
+	}, []);
 
 	const handleOnDocumentBottom = useCallback(() => {
-		async function fetchMoreData() {
-			if (!pageinateLoading && data.length) {
-				setPageLoading(true);
-				const response = await getData();
-				setData(data.concat(response.results));
-				setPageLoading(false);
-			}
+		if (!paginateLoading) {
+			fetchMoreData();
 		}
-		fetchMoreData();
-	}, [data, pageinateLoading]);
+	}, [paginateLoading, fetchMoreData]);
 
 	useBottomScrollListener(handleOnDocumentBottom);
 
@@ -62,20 +46,20 @@ export default function Friends() {
 
 	// Would need to be improved for scalability
 	function filteredData() {
-		let filteredData = [...data];
+		let filteredData = [...friends];
 
 		if (filters.close && filters.super) {
-			filteredData = [...data].filter(
+			filteredData = [...friends].filter(
 				(item) =>
 					item.friend_type === 'close' ||
 					item.friend_type === 'super'
 			);
 		} else if (filters.close) {
-			filteredData = [...data].filter(
+			filteredData = [...friends].filter(
 				(item) => item.friend_type === 'close'
 			);
 		} else if (filters.super) {
-			filteredData = [...data].filter(
+			filteredData = [...friends].filter(
 				(item) => item.friend_type === 'super'
 			);
 		}
@@ -106,7 +90,7 @@ export default function Friends() {
 		setPopup(false);
 	}
 
-	if (errorMsg)
+	if (error)
 		return (
 			<div>
 				Whoops, something went wrong. Please try again
@@ -196,9 +180,12 @@ export default function Friends() {
 						/>
 					</div>
 
-					{pageinateLoading && (
-						<div className="w-full text-center">
-							<Spinner size="xl" />
+					{paginateLoading && (
+						<div className="w-full text-center mb-10">
+							<p className="animate-pulse">
+								Fetching more
+								items...
+							</p>
 						</div>
 					)}
 				</>
