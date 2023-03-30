@@ -20,8 +20,6 @@ Open [http://localhost:3000](http://localhost:3000) with your browser to see the
 
 [Tailwind CSS](https://tailwindcss.com/)
 
-[Chakra UI](https://chakra-ui.com/)
-
 [React Icons](https://react-icons.github.io/react-icons)
 
 [PokeApi](https://pokeapi.co/)
@@ -32,7 +30,7 @@ Open [http://localhost:3000](http://localhost:3000) with your browser to see the
 
 ## UX and Architecture
 
-Navigate to **Friends**. Loading skeletons are displayed during initial fetch. Once initial batch is loaded, scrolling to bottom of screen automatically fetches another 10 results. Loading spinner utilized when more results are being fetched. Utilize filter menu to filter results.
+Navigate to **Friends**. Loading skeletons are displayed during initial fetch. Once initial batch is loaded, scrolling to bottom of screen automatically fetches another 10 results. Loading state utilized when more results are being fetched. Utilize filter menu to filter results.
 
 To view sample friend info view, click one of the friend items. All content is static, except "Friend ID" in header breadcrumbs. Value corresponds to index of item in data array.
 
