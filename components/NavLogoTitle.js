@@ -13,7 +13,7 @@ const NavLogoTitle = () => {
 				/>
 			</div>
 
-			<div>Clerkie Challenge</div>
+			<div className="font-semibold">Clerkie Challenge</div>
 		</div>
 	);
 };

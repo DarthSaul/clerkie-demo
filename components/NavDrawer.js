@@ -43,7 +43,9 @@ const NavDrawer = ({ close }) => {
 							>
 								<MdOutlineSpaceDashboard />
 							</div>
-							<div>Home</div>
+							<div className="font-medium">
+								Home
+							</div>
 						</div>
 					</Link>
 				</div>
@@ -78,7 +80,9 @@ const NavDrawer = ({ close }) => {
 							>
 								<FaUserFriends />
 							</div>
-							<div>Friends</div>
+							<div className="font-medium">
+								Friends
+							</div>
 						</div>
 					</Link>
 				</div>
@@ -111,7 +115,9 @@ const NavDrawer = ({ close }) => {
 							>
 								<MdCatchingPokemon />
 							</div>
-							<div>Pokemon</div>
+							<div className="font-medium">
+								Pokemon
+							</div>
 						</div>
 					</Link>
 				</div>
