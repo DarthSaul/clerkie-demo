@@ -20,3 +20,7 @@
 	cursor: pointer;
 	margin-bottom: 3px;
 }
+.clear-active {
+	color: #3399ff;
+	cursor: pointer;
+}

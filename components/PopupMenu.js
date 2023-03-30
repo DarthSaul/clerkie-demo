@@ -7,24 +7,36 @@ export default function PopupMenu({
 	handleChange,
 	selections,
 	applyFilters,
+	filterQty,
 }) {
+	function clear() {
+		setPopup(false);
+		clearFilters();
+	}
 	return (
 		<div className={styles['popup-container']}>
 			<div
 				className={`grid grid-cols-3 items-center ${styles.top}`}
 			>
-				<div
-					className="text-gray_400 text-sm font-semibold"
-					onClick={(e) => setPopup(false)}
-				>
+				<div className="text-gray_400 text-sm font-semibold">
 					<span
-						className={styles.clear}
-						onClick={(e) => clearFilters}
+						className={`${styles.clear} ${
+							filterQty() > 0
+								? styles[
+										'clear-active'
+								  ]
+								: ''
+						}`}
+						onClick={
+							filterQty() > 0
+								? (e) => clear()
+								: undefined
+						}
 					>
 						Clear All
 					</span>
 				</div>
-				<div className="text-center font-semibold text-lg">
+				<div className="text-center font-semibold text-lg text-gray_1000">
 					Filter
 				</div>
 				<div className="text-right">

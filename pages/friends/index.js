@@ -1,11 +1,10 @@
 import FriendsList from '@/components/FriendsList';
 import FriendsSkeleton from '@/components/FriendsSkeleton';
-import { useEffect, useState, useRef, useCallback } from 'react';
+import { useEffect, useState, useCallback } from 'react';
 import getData from '@/lib/getData.js';
 import { MdTune } from 'react-icons/md';
 import styles from '@/styles/Friends.module.css';
 import { Spinner } from '@chakra-ui/react';
-import { SmallCloseIcon } from '@chakra-ui/icons';
 import { useBottomScrollListener } from 'react-bottom-scroll-listener';
 import PopupMenu from '@/components/PopupMenu';
 import OutsideClickHandler from '@/components/OutsideClickHandler';
@@ -156,6 +155,9 @@ export default function Friends() {
 								}
 								applyFilters={
 									applyFilters
+								}
+								filterQty={
+									filterQty
 								}
 							/>
 						) : null}
