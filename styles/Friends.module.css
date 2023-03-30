@@ -1,7 +1,9 @@
 .filter-btn {
 	min-width: 52px;
 	height: 34px;
-	position: relative;
+	border: 1px solid #ababab;
+	display: flex;
+	justify-content: center;
 }
 .filter-btn:before {
 	position: absolute;
@@ -14,8 +16,8 @@
 	border-radius: 18px;
 }
 .filter-icon {
-	height: 26px;
-	width: 26px;
+	height: 24px;
+	width: 24px;
 }
 .cursor:hover {
 	cursor: pointer;

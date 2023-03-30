@@ -4,24 +4,17 @@ import { useEffect, useState, useRef, useCallback } from 'react';
 import getData from '@/lib/getData.js';
 import { MdTune } from 'react-icons/md';
 import styles from '@/styles/Friends.module.css';
-import {
-	Popover,
-	PopoverTrigger,
-	PopoverContent,
-	PopoverHeader,
-	PopoverBody,
-	Portal,
-	Box,
-	Button,
-	Spinner,
-} from '@chakra-ui/react';
+import { Spinner } from '@chakra-ui/react';
 import { SmallCloseIcon } from '@chakra-ui/icons';
 import { useBottomScrollListener } from 'react-bottom-scroll-listener';
+import PopupMenu from '@/components/PopupMenu';
+import OutsideClickHandler from '@/components/OutsideClickHandler';
 
 export default function Friends() {
 	const [data, setData] = useState([]);
 	const [loading, setLoading] = useState(false);
 	const [errorMsg, setError] = useState(false);
+	const [popupMenu, setPopup] = useState(false);
 
 	const [pageinateLoading, setPageLoading] = useState(false);
 	const [filters, setFilters] = useState({ close: false, super: false });
@@ -68,8 +61,6 @@ export default function Friends() {
 		}));
 	};
 
-	const initRef = useRef();
-
 	// Would need to be improved for scalability
 	function filteredData() {
 		let filteredData = [...data];
@@ -89,7 +80,6 @@ export default function Friends() {
 				(item) => item.friend_type === 'super'
 			);
 		}
-
 		return filteredData;
 	}
 
@@ -110,6 +100,13 @@ export default function Friends() {
 		return filtered.length;
 	}
 
+	function openPopup() {
+		setPopup(true);
+	}
+	function handleOutside() {
+		setPopup(false);
+	}
+
 	if (errorMsg)
 		return (
 			<div>
@@ -121,151 +118,51 @@ export default function Friends() {
 	return (
 		<>
 			<div className="flex items-center mb-6">
-				<div className="pr-2">
-					{/* Popover could be moved to its own component */}
-					<Popover
-						closeOnBlur={false}
-						placement="bottom-start"
-						initialFocusRef={initRef}
+				<div>
+					<OutsideClickHandler
+						onOutsideClick={handleOutside}
 					>
-						{({ isOpen, onClose }) => (
-							<>
-								<PopoverTrigger>
-									<div
-										className={`rounded-full border border-gray_600 px-2 flex align-center justify-center ${
-											styles[
-												'filter-btn'
-											]
-										} ${
-											isOpen ||
-											filters.close ||
-											filters.super
-												? 'text-white bg-slate-700'
-												: 'text-slate-700'
-										}`}
-									>
-										<div
-											className={`flex items-center justify-center ${styles.cursor}`}
-										>
-											<div>
-												<MdTune
-													className={
-														styles[
-															'filter-icon'
-														]
-													}
-												/>
-											</div>
-											{filterQty() >
-												0 && (
-												<div className="ml-2 text-xs">
-													{filterQty()}
-												</div>
-											)}
-										</div>
-									</div>
-								</PopoverTrigger>
+						<button
+							className={`rounded-full py-1 px-2 mr-3 relative 
+              ${styles['filter-btn']} ${
+								popupMenu
+									? 'bg-gray_1000 text-white'
+									: ''
+							}`}
+							onClick={openPopup}
+						>
+							<MdTune
+								className={
+									styles[
+										'filter-icon'
+									]
+								}
+							/>
+						</button>
 
-								<Portal>
-									<PopoverContent>
-										<PopoverHeader>
-											<div className="grid grid-cols-3 items-center my-2">
-												<div
-													className="text-slate-400 text-sm"
-													onClick={
-														onClose
-													}
-												>
-													<span
-														className={
-															styles.clear
-														}
-														onClick={
-															clearFilters
-														}
-													>
-														Clear
-														All
-													</span>
-												</div>
-												<div className="text-center font-bold text-lg">
-													Filter
-												</div>
-												<div className="text-right">
-													<SmallCloseIcon
-														onClick={
-															onClose
-														}
-														className={
-															styles.close
-														}
-													/>
-												</div>
-											</div>
-										</PopoverHeader>
-
-										<PopoverBody>
-											<Box>
-												<p className="my-1 text-slate-600 text-sm mb-3">
-													Friend
-													Status
-												</p>
-												<div className="flex justify-between items-center text-lg mb-3">
-													Close
-													Friends
-													<input
-														name="close"
-														type="checkbox"
-														checked={
-															selections.close
-														}
-														onChange={
-															handleChange
-														}
-													/>
-												</div>
-												<div className="flex justify-between items-center text-lg mb-3">
-													Super
-													Close
-													Friends
-													<input
-														name="super"
-														type="checkbox"
-														checked={
-															selections.super
-														}
-														onChange={
-															handleChange
-														}
-													/>
-												</div>
-											</Box>
-											<div
-												onClick={
-													applyFilters
-												}
-											>
-												<button
-													onClick={
-														onClose
-													}
-													ref={
-														initRef
-													}
-													className="w-full mt-4 rounded-md bg-gray-600 text-white py-2"
-												>
-													Apply
-												</button>
-											</div>
-										</PopoverBody>
-									</PopoverContent>
-								</Portal>
-							</>
-						)}
-					</Popover>
+						{popupMenu ? (
+							<PopupMenu
+								setPopup={
+									setPopup
+								}
+								clearFilters={
+									clearFilters
+								}
+								handleChange={
+									handleChange
+								}
+								selections={
+									selections
+								}
+								applyFilters={
+									applyFilters
+								}
+							/>
+						) : null}
+					</OutsideClickHandler>
 				</div>
 
-				<div className="pl-4">
+				<div className="pl-4" id="test-id">
 					<span
 						className={`${styles.clear} ${
 							filterQty() > 0

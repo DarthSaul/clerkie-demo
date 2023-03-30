@@ -1,0 +1,22 @@
+.popup-container {
+	display: block;
+	position: absolute;
+	top: 170px;
+	width: 320px;
+	height: 286px;
+	background: #ffffff;
+	box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+	border-radius: 6px;
+	z-index: 1;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+.top {
+	border-bottom: 1px solid #eaeaea;
+	padding: 1.2em 1em;
+}
+.close {
+	cursor: pointer;
+	margin-bottom: 3px;
+}
