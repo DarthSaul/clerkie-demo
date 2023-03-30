@@ -24,13 +24,13 @@ export default function Friends() {
 
 	useEffect(() => {
 		if (friends.length === 0) {
-			initData();
+			initData(filters);
 		}
 	}, []);
 
 	const handleOnDocumentBottom = useCallback(() => {
 		if (!paginateLoading) {
-			fetchMoreData();
+			fetchMoreData(filters);
 		}
 	}, [paginateLoading, fetchMoreData]);
 
@@ -44,35 +44,15 @@ export default function Friends() {
 		}));
 	};
 
-	// Would need to be improved for scalability
-	function filteredData() {
-		let filteredData = [...friends];
-
-		if (filters.close && filters.super) {
-			filteredData = [...friends].filter(
-				(item) =>
-					item.friend_type === 'close' ||
-					item.friend_type === 'super'
-			);
-		} else if (filters.close) {
-			filteredData = [...friends].filter(
-				(item) => item.friend_type === 'close'
-			);
-		} else if (filters.super) {
-			filteredData = [...friends].filter(
-				(item) => item.friend_type === 'super'
-			);
-		}
-		return filteredData;
-	}
-
 	function applyFilters() {
 		setFilters(selections);
+		initData(selections);
 	}
 
 	function clearFilters() {
 		setFilters({ close: false, super: false });
 		setSelections({ close: false, super: false });
+		initData({ close: false, super: false });
 	}
 
 	function filterQty() {
@@ -81,13 +61,6 @@ export default function Friends() {
 			([key, value]) => value === true
 		);
 		return filtered.length;
-	}
-
-	function openPopup() {
-		setPopup(true);
-	}
-	function handleOutside() {
-		setPopup(false);
 	}
 
 	if (error)
@@ -103,7 +76,9 @@ export default function Friends() {
 			<div className="flex items-center mb-6">
 				<div>
 					<OutsideClickHandler
-						onOutsideClick={handleOutside}
+						onOutsideClick={(e) =>
+							setPopup(false)
+						}
 					>
 						<button
 							className={`rounded-full py-1 px-2 mr-3 relative 
@@ -112,7 +87,9 @@ export default function Friends() {
 									? 'bg-gray_1000 text-white'
 									: ''
 							}`}
-							onClick={openPopup}
+							onClick={(e) =>
+								setPopup(true)
+							}
 						>
 							<MdTune
 								className={
@@ -176,7 +153,7 @@ export default function Friends() {
 				<>
 					<div className="pb-10">
 						<FriendsList
-							friends={filteredData()}
+							friends={friends}
 						/>
 					</div>
 

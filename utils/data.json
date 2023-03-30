@@ -40,7 +40,7 @@
 		},
 		{
 			"id": "006",
-			"name": "Sally Cooper",
+			"name": "Beyonce Knowles",
 			"email": "sallycooper@gmail.com",
 			"phone_number": "470-873-9183",
 			"friend_type": "close"
@@ -68,56 +68,56 @@
 		},
 		{
 			"id": "010",
-			"name": "Betty Wood",
+			"name": "Natasha Romanoff",
 			"email": "bettywood@gmail.com",
 			"phone_number": "898-431-2222",
 			"friend_type": null
 		},
 		{
 			"id": "001",
-			"name": "Person 11",
+			"name": "Saul Graves",
 			"email": "sallycooper@gmail.com",
 			"phone_number": "470-873-9183",
 			"friend_type": "close"
 		},
 		{
 			"id": "002",
-			"name": "Person 12",
+			"name": "Cate Blanchett",
 			"email": "judygonzalez@gmail.com",
 			"phone_number": "333-999-1212",
 			"friend_type": null
 		},
 		{
 			"id": "003",
-			"name": "Person 13",
+			"name": "Denzel Washington",
 			"email": "georgebryant@gmail.com",
 			"phone_number": "123-545-9999",
 			"friend_type": "super"
 		},
 		{
 			"id": "004",
-			"name": "Person 14",
+			"name": "Octavia Spencer",
 			"email": "harrystyles@gmail.com",
 			"phone_number": "222-444-1111",
 			"friend_type": "super"
 		},
 		{
 			"id": "005",
-			"name": "Person 15",
+			"name": "Aliyah Boston",
 			"email": "bettywood@gmail.com",
 			"phone_number": "898-431-2222",
 			"friend_type": null
 		},
 		{
 			"id": "006",
-			"name": "Person 16",
+			"name": "Sue Bird",
 			"email": "sallycooper@gmail.com",
 			"phone_number": "470-873-9183",
 			"friend_type": "close"
 		},
 		{
 			"id": "007",
-			"name": "Person 17",
+			"name": "Angela Bassett",
 			"email": "judygonzalez@gmail.com",
 			"phone_number": "333-999-1212",
 			"friend_type": null
@@ -145,77 +145,7 @@
 		},
 		{
 			"id": "001",
-			"name": "Sally Cooper",
-			"email": "sallycooper@gmail.com",
-			"phone_number": "470-873-9183",
-			"friend_type": "close"
-		},
-		{
-			"id": "002",
-			"name": "Judy Gonzalez",
-			"email": "judygonzalez@gmail.com",
-			"phone_number": "333-999-1212",
-			"friend_type": null
-		},
-		{
-			"id": "003",
-			"name": "George Bryant",
-			"email": "georgebryant@gmail.com",
-			"phone_number": "123-545-9999",
-			"friend_type": "super"
-		},
-		{
-			"id": "004",
-			"name": "Harry Styles",
-			"email": "harrystyles@gmail.com",
-			"phone_number": "222-444-1111",
-			"friend_type": "super"
-		},
-		{
-			"id": "005",
-			"name": "Betty Wood",
-			"email": "bettywood@gmail.com",
-			"phone_number": "898-431-2222",
-			"friend_type": null
-		},
-		{
-			"id": "006",
-			"name": "Sally Cooper",
-			"email": "sallycooper@gmail.com",
-			"phone_number": "470-873-9183",
-			"friend_type": "close"
-		},
-		{
-			"id": "007",
-			"name": "Judy Gonzalez",
-			"email": "judygonzalez@gmail.com",
-			"phone_number": "333-999-1212",
-			"friend_type": null
-		},
-		{
-			"id": "008",
-			"name": "George Bryant",
-			"email": "georgebryant@gmail.com",
-			"phone_number": "123-545-9999",
-			"friend_type": "super"
-		},
-		{
-			"id": "009",
-			"name": "Harry Styles",
-			"email": "harrystyles@gmail.com",
-			"phone_number": "222-444-1111",
-			"friend_type": "super"
-		},
-		{
-			"id": "010",
-			"name": "Betty Wood",
-			"email": "bettywood@gmail.com",
-			"phone_number": "898-431-2222",
-			"friend_type": null
-		},
-		{
-			"id": "001",
-			"name": "Sally Cooper",
+			"name": "Derek Jeter",
 			"email": "sallycooper@gmail.com",
 			"phone_number": "470-873-9183",
 			"friend_type": "close"
@@ -250,7 +180,7 @@
 		},
 		{
 			"id": "006",
-			"name": "Sally Cooper",
+			"name": "Greta Thunberg",
 			"email": "sallycooper@gmail.com",
 			"phone_number": "470-873-9183",
 			"friend_type": "close"
@@ -285,7 +215,7 @@
 		},
 		{
 			"id": "001",
-			"name": "Sally Cooper",
+			"name": "Viola Davis",
 			"email": "sallycooper@gmail.com",
 			"phone_number": "470-873-9183",
 			"friend_type": "close"
@@ -320,7 +250,7 @@
 		},
 		{
 			"id": "006",
-			"name": "Sally Cooper",
+			"name": "Caitlin Clark",
 			"email": "sallycooper@gmail.com",
 			"phone_number": "470-873-9183",
 			"friend_type": "close"
@@ -355,7 +285,7 @@
 		},
 		{
 			"id": "001",
-			"name": "Sally Cooper",
+			"name": "Beyonce Knowles",
 			"email": "sallycooper@gmail.com",
 			"phone_number": "470-873-9183",
 			"friend_type": "close"
@@ -390,7 +320,7 @@
 		},
 		{
 			"id": "006",
-			"name": "Sally Cooper",
+			"name": "Candance Parker",
 			"email": "sallycooper@gmail.com",
 			"phone_number": "470-873-9183",
 			"friend_type": "close"
@@ -425,7 +355,7 @@
 		},
 		{
 			"id": "001",
-			"name": "Sally Cooper",
+			"name": "Michelle Yeo",
 			"email": "sallycooper@gmail.com",
 			"phone_number": "470-873-9183",
 			"friend_type": "close"
@@ -460,7 +390,7 @@
 		},
 		{
 			"id": "006",
-			"name": "Sally Cooper",
+			"name": "Jamie Lee Curtis",
 			"email": "sallycooper@gmail.com",
 			"phone_number": "470-873-9183",
 			"friend_type": "close"
@@ -495,7 +425,7 @@
 		},
 		{
 			"id": "001",
-			"name": "Sally Cooper",
+			"name": "Kamala Harris",
 			"email": "sallycooper@gmail.com",
 			"phone_number": "470-873-9183",
 			"friend_type": "close"
@@ -530,7 +460,77 @@
 		},
 		{
 			"id": "006",
+			"name": "James Young",
+			"email": "sallycooper@gmail.com",
+			"phone_number": "470-873-9183",
+			"friend_type": "close"
+		},
+		{
+			"id": "007",
+			"name": "Judy Gonzalez",
+			"email": "judygonzalez@gmail.com",
+			"phone_number": "333-999-1212",
+			"friend_type": null
+		},
+		{
+			"id": "008",
+			"name": "George Bryant",
+			"email": "georgebryant@gmail.com",
+			"phone_number": "123-545-9999",
+			"friend_type": "super"
+		},
+		{
+			"id": "009",
+			"name": "Harry Styles",
+			"email": "harrystyles@gmail.com",
+			"phone_number": "222-444-1111",
+			"friend_type": "super"
+		},
+		{
+			"id": "010",
+			"name": "George Washington",
+			"email": "bettywood@gmail.com",
+			"phone_number": "898-431-2222",
+			"friend_type": null
+		},
+		{
+			"id": "001",
 			"name": "Sally Cooper",
+			"email": "sallycooper@gmail.com",
+			"phone_number": "470-873-9183",
+			"friend_type": "close"
+		},
+		{
+			"id": "002",
+			"name": "Ruth Bader Ginsburg",
+			"email": "judygonzalez@gmail.com",
+			"phone_number": "333-999-1212",
+			"friend_type": null
+		},
+		{
+			"id": "003",
+			"name": "Abraham Lincoln",
+			"email": "georgebryant@gmail.com",
+			"phone_number": "123-545-9999",
+			"friend_type": "super"
+		},
+		{
+			"id": "004",
+			"name": "Harry Styles",
+			"email": "harrystyles@gmail.com",
+			"phone_number": "222-444-1111",
+			"friend_type": "super"
+		},
+		{
+			"id": "005",
+			"name": "Martin Luther King Jr.",
+			"email": "bettywood@gmail.com",
+			"phone_number": "898-431-2222",
+			"friend_type": null
+		},
+		{
+			"id": "006",
+			"name": "Barack Obama",
 			"email": "sallycooper@gmail.com",
 			"phone_number": "470-873-9183",
 			"friend_type": "close"
@@ -565,14 +565,14 @@
 		},
 		{
 			"id": "001",
-			"name": "Sally Cooper",
+			"name": "Tony Stark",
 			"email": "sallycooper@gmail.com",
 			"phone_number": "470-873-9183",
 			"friend_type": "close"
 		},
 		{
 			"id": "002",
-			"name": "Judy Gonzalez",
+			"name": "Steve Rogers",
 			"email": "judygonzalez@gmail.com",
 			"phone_number": "333-999-1212",
 			"friend_type": null
@@ -600,7 +600,7 @@
 		},
 		{
 			"id": "006",
-			"name": "Sally Cooper",
+			"name": "Nick Fury",
 			"email": "sallycooper@gmail.com",
 			"phone_number": "470-873-9183",
 			"friend_type": "close"
@@ -635,7 +635,7 @@
 		},
 		{
 			"id": "001",
-			"name": "Sally Cooper",
+			"name": "Paul Rudd",
 			"email": "sallycooper@gmail.com",
 			"phone_number": "470-873-9183",
 			"friend_type": "close"
@@ -656,7 +656,7 @@
 		},
 		{
 			"id": "004",
-			"name": "Harry Styles",
+			"name": "LeBron James",
 			"email": "harrystyles@gmail.com",
 			"phone_number": "222-444-1111",
 			"friend_type": "super"
@@ -670,7 +670,7 @@
 		},
 		{
 			"id": "006",
-			"name": "Sally Cooper",
+			"name": "Stephen Curry",
 			"email": "sallycooper@gmail.com",
 			"phone_number": "470-873-9183",
 			"friend_type": "close"
@@ -691,7 +691,7 @@
 		},
 		{
 			"id": "009",
-			"name": "Harry Styles",
+			"name": "Ruth Bader Ginsburg",
 			"email": "harrystyles@gmail.com",
 			"phone_number": "222-444-1111",
 			"friend_type": "super"

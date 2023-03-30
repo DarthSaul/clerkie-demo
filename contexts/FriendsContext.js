@@ -26,9 +26,12 @@ function FriendsProvider({ children }) {
 		}));
 	}
 
-	async function initData() {
+	async function initData(filters) {
 		setLoading(true);
-		const { results, error } = await getData(friendsState.page);
+		const { results, error } = await getData({
+			page: friendsState.page,
+			filters,
+		});
 		if (error) {
 			setState((prevState) => ({
 				...prevState,
@@ -46,9 +49,12 @@ function FriendsProvider({ children }) {
 		}
 	}
 
-	async function fetchMoreData() {
+	async function fetchMoreData(filters) {
 		setPageLoading(true);
-		const { results, error } = await getData(friendsState.page);
+		const { results, error } = await getData({
+			page: friendsState.page,
+			filters,
+		});
 		if (error) {
 			setState((prevState) => ({
 				...prevState,
